@@ -14,13 +14,13 @@ func NewCache() Cache {
 
 func (c *Cache) Get(key string) (string, bool) {
 
-	x, err := c.kv[key]
-	if err == false {
+	x, err1 := c.kv[key]
+	if err1 == false {
 		return "", false
 	}
 
-	d, err := c.expireDate[x]
-	if err == true {
+	d, err2 := c.expireDate[key]
+	if err2 == true {
 		if !time.Now().Before(d) {
 			return "expired", false
 		}
