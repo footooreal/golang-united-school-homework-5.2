@@ -52,4 +52,7 @@ func (c *Cache) Keys() []string {
 	return k
 }
 
+func main() {
+	
+}
 
