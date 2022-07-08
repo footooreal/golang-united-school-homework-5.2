@@ -22,6 +22,7 @@ func (c *Cache) Get(key string) (string, bool) {
 	d, err := c.expireDate[x]
 	if err == true {
 		if !time.Now().Before(d) {
+			delete(c.kv, key)
 			return "", false
 		}
 	}
