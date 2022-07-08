@@ -1,9 +1,6 @@
 package cache
 
-import 
-	
-	"time"
-
+import "time"
 
 type Cache struct {
 	kv         map[string]string
@@ -51,8 +48,3 @@ func (c *Cache) Keys() []string {
 	}
 	return k
 }
-
-func main() {
-	
-}
-
