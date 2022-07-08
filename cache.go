@@ -33,6 +33,7 @@ func (c *Cache) Get(key string) (string, bool) {
 func (c *Cache) PutTill(key, value string, deadline time.Time) {
 	c.kv[key] = value
 	c.expireDate[key] = deadline
+	c.expire[key] = false
 }
 
 func (c *Cache) Put(key, value string) {
