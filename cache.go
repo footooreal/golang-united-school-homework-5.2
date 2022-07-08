@@ -52,27 +52,4 @@ func (c *Cache) Keys() []string {
 	return k
 }
 
-func main() {
-	x := NewCache()
-	x.PutTill("a", "value1", time.Now()) //
-	x.Put("b", "value2")                 //
-	x.Keys()                             // "b"
 
-	x1, err := x.Get("a")
-	fmt.Println(x1)  // ""
-	fmt.Println(err) // false         pass
-
-	x2, err := x.Get("b")
-	fmt.Println(x2)  // "value2"
-	fmt.Println(err) // true
-
-	x3, err := x.Get("x")
-	fmt.Println(x3)  // ""
-	fmt.Println(err) // false
-
-	x4 := x.Keys()
-	fmt.Println(x4) // "b"
-
-	fmt.Println(x)
-
-}
